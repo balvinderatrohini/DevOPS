@@ -13,7 +13,7 @@ pipeline {
         stage('Deploy to jboss servitium') {
             steps {
                 sh '''
-                    ansible-playbook -i ansible/inventory ansible/sample_war_deploy.yml -e "war_file=/home/Project/DevOPS/sample.war"
+                    ansible-playbook -i /etc/ansible/playbooks/inventory /etc/ansible/playbooks/sample_war_deploy.yml -e "war_file=/home/Project/DevOPS/sample.war"
                 '''
             }
         }
